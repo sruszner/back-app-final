@@ -28,7 +28,7 @@ app.post('/create', async (req, res) => {
 
 app.post('/delete', async (req, res) => {
     console.log(req.body);
-        await ContactControllers.delete(req.body._id);
+        await ContactControllers.delete(req.body);
     res.json('Contact deleted')
 });
 

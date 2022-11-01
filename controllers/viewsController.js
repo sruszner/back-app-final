@@ -21,7 +21,8 @@ class ContactControllers {
 
     async delete(contact){
         try {
-            return await Contact.findByIdAndDelete(contact)
+            const filter = contact._id
+            return await Contact.findByIdAndDelete(filter)
         } catch (error) {
             throw error;
         }
@@ -29,7 +30,8 @@ class ContactControllers {
 
     async update(contact){
         try {
-            return await Contact.findOneAndUpdate(contact._id, {
+            const filter = contact._id
+            return await Contact.findByIdAndUpdate(filter, {
                 firstName: contact.firstName,
                 lastName: contact.lastName,
                 email: contact.email
