@@ -11,7 +11,7 @@ const ContactControllers = require('./controllers/viewsController');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://storied-strudel-0a32f7.netlify.app/'
 }));
 
 app.get('/', async (req, res) => {
