@@ -1,6 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
-/* const cors = require('cors'); */
+const cors = require('cors');
 require('./db/connection')
 
 const PORT = process.env.PORT || 3001;
@@ -10,9 +10,9 @@ const ContactControllers = require('./controllers/viewsController');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-/* app.use(cors({
-    origin: 'https://front-app-final.netlify.app/'
-})); */
+app.use(cors({
+    /* origin: 'https://front-app-final.netlify.app/' */
+}));
 
 app.get('/', async (req, res) => {
     res.json({
