@@ -1,4 +1,4 @@
-BACKEND APP final en REACT
+BACKEND APP final con Node.JS
 
 PWA 2022-
 Sebastian Ruszner
