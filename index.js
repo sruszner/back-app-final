@@ -10,9 +10,9 @@ const ContactControllers = require('./controllers/viewsController');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(cors({
-    origin: 'https://storied-strudel-0a32f7.netlify.app/'
-}));
+/* app.use(cors({
+    origin: 'https://front-app-final.netlify.app/'
+})); */
 
 app.get('/', async (req, res) => {
     res.json({
