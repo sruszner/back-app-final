@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv').config();
+const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('./db/connection')
 
@@ -11,7 +12,8 @@ const ContactControllers = require('./controllers/viewsController');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-    /* origin: 'https://front-app-final.netlify.app/' */
+/*     origin: 'https://front-app-final.netlify.app/' */
+/* origin: 'http://localhost:3000' */
 }));
 
 app.get('/', async (req, res) => {
@@ -36,6 +38,12 @@ app.post('/update', async (req, res) => {
     console.log(req.body);
         await ContactControllers.update(req.body);
     res.json('Contact updated')
+});
+
+app.post('/subscribed', async (req, res) => {
+    console.log(req.body);
+        await ContactControllers.subscribed(req.body);
+    res.json('Subscribed! Check your email')
 });
 
 app.listen(PORT, ()=>{
