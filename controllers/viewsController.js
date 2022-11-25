@@ -41,6 +41,21 @@ class ContactControllers {
         }
     } 
 
+/*     
+    async auth(contact){
+        try {
+            const filter = contact.email
+            return await Contact.findOne({email : filter}, {
+                firstName: contact.firstName,
+                lastName: contact.lastName,
+                email: contact.email
+            })
+        } catch (error) {
+            throw error;
+        }
+    } 
+ */
+
     async subscribed(contact){
         try {
             console.log(contact.email);
