@@ -8,19 +8,22 @@ const corsOptions = require('./config/corsOptions');
 const ROLES_LIST = require('./config/roles_list');
 const verifyRoles = require('./middleware/verifyRoles');
 
+
+
 const PORT = process.env.PORT || 3001;
 const app = express();
 const ContactControllers = require('./controllers/viewsController');
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 
+app.use(credentials);
+app.use(cors(corsOptions));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
-app.use(credentials);
-app.use(cors(corsOptions));
+
 
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
