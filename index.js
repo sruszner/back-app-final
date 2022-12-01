@@ -16,8 +16,9 @@ const ContactControllers = require('./controllers/viewsController');
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 
-app.use(cors(corsOptions));
 app.use(credentials);
+app.use(cors(corsOptions));
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
