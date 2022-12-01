@@ -4,7 +4,7 @@ const nodemailer = require('nodemailer');
 const cors = require('cors');
 require('./db/connection')
 const credentials = require('./middleware/credentials');
-/* const corsOptions = require('./config/corsOptions'); */
+const corsOptions = require('./config/corsOptions');
 const ROLES_LIST = require('./config/roles_list');
 const verifyRoles = require('./middleware/verifyRoles');
 
@@ -16,19 +16,16 @@ const ContactControllers = require('./controllers/viewsController');
 const verifyJWT = require('./middleware/verifyJWT');
 const cookieParser = require('cookie-parser');
 
+app.use(cors(corsOptions));
 app.use(credentials);
-/* app.use(cors(corsOptions)); */
-
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
-
-
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
+
 
 app.post('/subscribed', async (req, res) => {
     console.log(req.body);
