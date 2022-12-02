@@ -20,9 +20,6 @@ const handleNewUser = async (req, res) => {
             "password": hashedPwd
         }); 
 
-        function sendRegConfirm(user){
-            try {
-                console.log(contact.email);
                 const email = user;
                 let data = {
                     email: email,
@@ -34,7 +31,7 @@ const handleNewUser = async (req, res) => {
                     port: 465,
                     secure: true,
                     auth: {
-                        admin: 'spafrancorchampsapp@gmail.com',
+                        user: 'spafrancorchampsapp@gmail.com',
                         pass: 'quodedvuvzpzcrqw'
                     }
                 });
@@ -50,8 +47,8 @@ const handleNewUser = async (req, res) => {
                 var mailOptions = {
                     from: 'spafrancorchapsapp@gmail.com',
                     to: data.email,
-                    subject: 'SPA Circuit - Subscribed',
-                    html: ('<h3>Thank you so much for your subscription, ' + data.email + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
+                    subject: 'SPA Circuit - Registered',
+                    html: ('<h3>Thank you so much for your registration, ' + data.email + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
                 };
     
                 transporter.sendMail(mailOptions, function (error, info) {
@@ -61,13 +58,6 @@ const handleNewUser = async (req, res) => {
                         console.log('Email sent: ' + info.response);
                     }
                 });
-    
-            } catch (error) {
-                throw error;
-            }
-        }
-
-        sendRegConfirm();
 
         res.status(201).json({ 'success': `New user ${user} created!` });
     } catch (err) {
