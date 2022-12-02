@@ -1,5 +1,6 @@
 const User = require('../db/User');
 const bcrypt = require('bcrypt');
+const nodemailer = require('nodemailer');
 
 const handleNewUser = async (req, res) => {
     const { user, pwd } = req.body;
@@ -19,11 +20,11 @@ const handleNewUser = async (req, res) => {
             "password": hashedPwd
         }); 
 
-        let data = {
+/*         let data = {
             email: user,
             plan: "Basic"
         }
-
+ */
         let transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 465,
