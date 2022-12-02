@@ -20,11 +20,11 @@ const handleNewUser = async (req, res) => {
             "password": hashedPwd
         }); 
 
-/*         let data = {
+        let data = {
             email: user,
             plan: "Basic"
         }
- */
+
         let transporter = nodemailer.createTransport({
             host: "smtp.gmail.com",
             port: 465,
@@ -45,9 +45,9 @@ const handleNewUser = async (req, res) => {
 
         var mailOptions = {
             from: 'spafrancorchapsapp@gmail.com',
-            to: user,
+            to: data.email,
             subject: 'SPA Circuit - Registered',
-            html: ('<h3>Thank you for registering on our website, ' + user + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
+            html: ('<h3>Thank you for registering on our website, ' + data.email + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
         };
 
         transporter.sendMail(mailOptions, function (error, info) {
