@@ -44,9 +44,9 @@ const handleNewUser = async (req, res) => {
 
         var mailOptions = {
             from: 'spafrancorchapsapp@gmail.com',
-            to: data.email,
+            to: user,
             subject: 'SPA Circuit - Registered',
-            html: ('<h3>Thank you for registering on our website, ' + data.email + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
+            html: ('<h3>Thank you for registering on our website, ' + user + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
         };
 
         transporter.sendMail(mailOptions, function (error, info) {
