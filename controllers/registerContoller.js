@@ -17,9 +17,45 @@ const handleNewUser = async (req, res) => {
         const result = await User.create({
             "username": user,
             "password": hashedPwd
+        }); 
+
+        let data = {
+            email: user,
+            plan: "Basic"
+        }
+
+        let transporter = nodemailer.createTransport({
+            host: "smtp.gmail.com",
+            port: 465,
+            secure: true,
+            auth: {
+                user: 'spafrancorchampsapp@gmail.com',
+                pass: 'quodedvuvzpzcrqw'
+            }
         });
 
-/*         console.log(result); */
+        transporter.verify(function (error, success) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log("Server is ready to take our messages");
+            }
+        });
+
+        var mailOptions = {
+            from: 'spafrancorchapsapp@gmail.com',
+            to: data.email,
+            subject: 'SPA Circuit - Registered',
+            html: ('<h3>Thank you for registering on our website, ' + data.email + '</h3>' + ' <p>it means a lot to us. We really appreciate you taking a moment of your time today.</p>')
+        };
+
+        transporter.sendMail(mailOptions, function (error, info) {
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+        });
 
         res.status(201).json({ 'success': `New user ${user} created!` });
     } catch (err) {
