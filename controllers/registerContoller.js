@@ -29,7 +29,7 @@ const handleNewUser = async (req, res) => {
             port: 465,
             secure: true,
             auth: {
-                user: 'spafrancorchampsapp@gmail.com',
+                AdminUser: 'spafrancorchampsapp@gmail.com',
                 pass: 'quodedvuvzpzcrqw'
             }
         });
