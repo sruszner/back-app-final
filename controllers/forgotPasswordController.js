@@ -39,7 +39,7 @@ const handleForgotPassword = async (req, res) => {
             from: 'spafrancorchapsapp@gmail.com',
             to: foundUser.username,
             subject: 'SPA Circuit - Forgot PASS',
-            html: (`Follow next link to refresh your pass: http://localhost:3000/resetpass/${resetToken}`)
+            html: (`Follow next link to refresh your pass: https://front-app-final.netlify.app/resetpass/${resetToken}`)
         };
 
         transporter.sendMail(mailOptions, function (error, info) {
