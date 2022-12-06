@@ -26,7 +26,8 @@ app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/refresh', require('./routes/refresh'));
 app.use('/logout', require('./routes/logout'));
-
+app.use('/forgot', require('./routes/forgot'));
+app.use('/reset', require('./routes/reset'));
 
 app.post('/subscribed', async (req, res) => {
     console.log(req.body);
