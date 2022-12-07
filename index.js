@@ -19,6 +19,7 @@ const cookieParser = require('cookie-parser');
 app.use(credentials);
 app.use(cors(corsOptions));
 
+app.use(express.static(__dirname + '/assets'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
