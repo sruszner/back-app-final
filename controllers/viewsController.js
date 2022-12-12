@@ -204,7 +204,6 @@ class ContactControllers {
                     }
                 ],
         };
-        
                 transporter.verify(function (error, success) {
                     if (error) {
                         console.log(error);
@@ -220,8 +219,7 @@ class ContactControllers {
                         console.log('Email sent: ' + info.response);
                     }
                 });
-        res.status(201).json({ 'success': `New user ${data.email} Subscribed!` });
-
+                
         } catch (error) {
             throw error;
         }
