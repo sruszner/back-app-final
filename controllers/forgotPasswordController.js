@@ -134,7 +134,7 @@ const handleForgotPassword = async (req, res) => {
         var mailOptions = {
             from: '"SPA Circuit" spafrancorchapsapp@gmail.com',
             to: foundUser.username,
-            subject: 'SPA Circuit - Forgot PASS',
+            subject: 'Forgot Password',
             html: mensajeHtml,
             attachments: [
                 {

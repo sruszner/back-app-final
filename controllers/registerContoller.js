@@ -135,7 +135,7 @@ const handleNewUser = async (req, res) => {
         var mailOptions = {
             from: '"SPA Circuit" spafrancorchapsapp@gmail.com',
             to: data.email,
-            subject: 'SPA Circuit - Registered',
+            subject: 'Registered',
             html: mensajeHtml,
             attachments: [
                 {
