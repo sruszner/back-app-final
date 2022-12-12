@@ -92,7 +92,7 @@ const handleNewUser = async (req, res) => {
                         <p style="margin-bottom: 50px;"><i>Sincerely:</i><br>SPA Circuit</p>
         
                         <!-- Botón -->
-                        <a style="color: #ffffff" class="claseBoton" href="https://front-app-final.netlify.app">Home</a>
+                        <a style="color: #ffffff" class="claseBoton" href="https://front-app-final.netlify.app/login">Login</a>
                     </div>
                     <!-- Contenido principal -->
         

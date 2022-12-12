@@ -131,7 +131,7 @@ class ContactControllers {
                             <p style="margin-bottom: 50px;"><i>Sincerely:</i><br>SPA Circuit</p>
             
                             <!-- Botón -->
-                            <a style="color: #ffffff" class="claseBoton" href="https://front-app-final.netlify.app/login">Login</a>
+                            <a style="color: #ffffff" class="claseBoton" href="https://front-app-final.netlify.app">Home</a>
                         </div>
                         <!-- Contenido principal -->
             
