@@ -66,6 +66,7 @@ class ContactControllers {
             }
 
             let mensajeHtml = `<!DOCTYPE html>
+
         <html lang="en">
         <head>
             <meta charset="UTF-8">
@@ -219,7 +220,7 @@ class ContactControllers {
                         console.log('Email sent: ' + info.response);
                     }
                 });
-        res.status(201).json({ 'success': `New user ${user} Subscribed!` });
+        res.status(201).json({ 'success': `New user ${data.email} Subscribed!` });
 
         } catch (error) {
             throw error;
